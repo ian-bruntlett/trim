@@ -7,4 +7,4 @@ chop  - delete last char in string regardless
 
 Consider other functions written in the past.
 
-(c) Ian Bruntlett October 2019
+(c) Ian Bruntlett October 2019 - November 2019, Licenced under the ISC Licence (see ISC-LICENCE.txt).
