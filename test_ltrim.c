@@ -1,5 +1,6 @@
 // test_ltrim.c
-// (c) Ian Bruntlett, October 2019
+// (c) Ian Bruntlett, October 2019 - November 2019
+// Licenced under the ISC Licence (see ISC-LICENCE.txt)
 
 #include <assert.h>
 #include <stdio.h>
@@ -34,6 +35,11 @@ int main(int argc, char *argv[])
       test_ltrimcpy("","");
       test_ltrimcpy("     ","");
     }
+  else if (argc==2)
+  {
+    printf("'%s' : ", argv[1]);
+    printf("'%s'\n",  ltrim(argv[1]));
+  }
   else if (argc==3) 
       test_ltrimcpy(argv[1],argv[2]);
   else

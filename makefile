@@ -1,5 +1,6 @@
 # makefile for libtrim.a static library, using archive members as targets.
-# (c) Ian Bruntlett, October 2019
+# (c) Ian Bruntlett, October 2019 - November 2019
+# Licenced under the ISC Licence (see ISC-LICENCE.txt)
 
 CC = gcc
 CFLAGS = -g

@@ -1,5 +1,6 @@
 // rtrim.c
-// (c) Ian Bruntlett, October 2019
+// (c) Ian Bruntlett, October 2019 - November 2019
+//, Licenced under the ISC Licence (see ISC-LICENCE.txt)
 
 #include <stdio.h>
 #include <string.h>
@@ -8,18 +9,18 @@
 
 #define TEST_MAX (100)
 
-void rtrim(char text[])
+char *rtrim(char text[])
 {
   int length = strlen(text);
   if (!length)
-    return;
+    return text;
 
   for (int rhs = length-1;
        isspace(text[rhs]);
        --rhs
        )
     text[rhs] = '\0';
-       
+  return text;     
 }
 
 void rtrimcpy(char *dest, char *src)

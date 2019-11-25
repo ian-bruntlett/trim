@@ -1,5 +1,6 @@
 // test_rtrim.c
-// (c) Ian Bruntlett, October 2019
+// (c) Ian Bruntlett, October 2019 - November 2019
+// Licenced under the ISC Licence (see ISC-LICENCE.txt)
 
 #include <assert.h>
 #include <stdio.h>
@@ -33,6 +34,11 @@ int main(int argc, char *argv[])
     test_rtrimcpy("Hello ","Hello");
     test_rtrimcpy("","");
     test_rtrimcpy("      ","");
+  }
+  else if (argc==2)
+  {
+    printf("'%s' : ", argv[1]);
+    printf("'%s'\n",  rtrim(argv[1]));
   }
   else if (argc==3)
     test_rtrimcpy(argv[1],argv[2]);

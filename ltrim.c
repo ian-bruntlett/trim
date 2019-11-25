@@ -1,14 +1,15 @@
 // ltrim.c
-// (c) Ian Bruntlett, October 2019
+// (c) Ian Bruntlett, October 2019 - November 2019
+// Licenced under the ISC Licence (see ISC-LICENCE.txt)
 
 #include <string.h>
 #include <ctype.h>
 #include "trim.h"
 
-void ltrim(char s[])
+char *ltrim(char s[])
 {
   if ( !isspace(s[0]) )
-    {return;}
+    return s;
     
   // Get index of first non-space
   int non_space_index=0;
@@ -18,6 +19,7 @@ void ltrim(char s[])
   int dest_index=0;
   while ( s[dest_index++] = s[non_space_index++] )
     ;
+  return s;
 }
 
 void ltrimcpy(char *dest, char *src)
