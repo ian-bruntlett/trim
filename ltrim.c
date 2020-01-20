@@ -6,26 +6,23 @@
 #include <ctype.h>
 #include "trim.h"
 
-char *ltrim(char s[])
-{
-  if ( !isspace(s[0]) )
-    return s;
-    
+static char *first_non_isspace(char *s) {
   // Get index of first non-space
-  int non_space_index=0;
+  size_t non_space_index=0;
   while ( isspace(s[non_space_index]) )
     { ++non_space_index; }
+  return s + non_space_index;
+}
+
+char *ltrim(char s[])
+{
   // copy text characters over the white space
-  int dest_index=0;
-  while ( s[dest_index++] = s[non_space_index++] )
-    ;
+  char *t = first_non_isspace(s);
+  memmove(s, t, strlen(t)+1);
   return s;
 }
 
 void ltrimcpy(char *dest, char *src)
 {
-  strcpy(dest, src);
-  ltrim(dest);
+  strcpy(dest, first_non_isspace(src));
 }
-
-
