@@ -12,9 +12,11 @@ all: $(executables)
 
 test_ltrim : test_ltrim.c trim.h libtrim.a(ltrim.o)
 	$(CC) -g -L.    test_ltrim.c -ltrim -o$@
+	./$@ # run test
 
 test_rtrim : test_rtrim.c trim.h libtrim.a(rtrim.o)
 	$(CC) -g -L.    test_rtrim.c -ltrim -o$@
+	./$@ # run test
 
 ltrim.o : ltrim.c trim.h
 
